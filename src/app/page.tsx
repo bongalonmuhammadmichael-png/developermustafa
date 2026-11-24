@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -8,8 +9,9 @@ export default function Home() {
 
       <Hero />
 
+      <FeaturedProjects />
+
       {/* Future homepage sections */}
-      <div id="work" className="scroll-mt-20" />
       <div id="about" className="scroll-mt-20" />
       <div id="contact" className="scroll-mt-20" />
     </main>
