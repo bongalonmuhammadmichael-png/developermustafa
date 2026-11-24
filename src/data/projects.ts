@@ -1,6 +1,7 @@
 export type Project = {
   title: string;
   slug: string;
+  image: string;
   category: string;
   description: string;
   technologies: string[];
@@ -14,6 +15,7 @@ export const projects: Project[] = [
   {
     title: "INSIGHT",
     slug: "insight",
+    image: "/images/projects/insight-dashboard.png",
     category: "Frontend Development",
     description:
       "A modern analytics dashboard designed to present business performance through revenue insights, customer analytics, product performance, and transaction management.",

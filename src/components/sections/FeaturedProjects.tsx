@@ -1,4 +1,5 @@
-import Link from "next/link";
+
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 export default function FeaturedProjects() {
@@ -36,63 +37,19 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Project Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
-
+        <div className="grid gap-10 md:grid-cols-2">
           {featuredProjects.map((project, index) => (
-            <article
-              key={project.slug}
-              className="group min-w-0"
-            >
-              {/* Project Preview */}
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#202321] p-5 sm:p-8">
+            <article key={project.slug} className="group min-w-0">
 
-                {/* Preview Header */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="text-xs font-semibold tracking-wider text-white">
-                    {project.title}
-                  </span>
-
-                  <span className="text-[10px] uppercase tracking-widest text-white/50">
-                    Analytics Platform
-                  </span>
-                </div>
-
-                {/* Dashboard Preview */}
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  {["Revenue", "Customers", "Orders"].map((label) => (
-                    <div
-                      key={label}
-                      className="rounded-lg border border-white/10 bg-white/[0.06] p-3"
-                    >
-                      <p className="text-[9px] text-white/50 sm:text-xs">
-                        {label}
-                      </p>
-
-                      <div className="mt-3 h-2 w-3/4 rounded-full bg-white/70" />
-                      <div className="mt-2 h-1.5 w-1/2 rounded-full bg-white/20" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Decorative Chart */}
-                <div className="mt-4 flex h-24 items-end gap-2 rounded-lg border border-white/10 bg-white/[0.04] p-4 sm:h-32">
-                  {[35, 55, 42, 75, 50, 85, 65, 95, 70, 100, 78, 90].map(
-                    (height, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t-sm bg-[#A8B99A]/80 transition-all duration-300 group-hover:bg-[#C5D4B7]"
-                        style={{ height: `${height}%` }}
-                      />
-                    )
-                  )}
-                </div>
-
-                {/* Preview Label */}
-                <div className="absolute bottom-3 right-4">
-                  <span className="text-[9px] uppercase tracking-widest text-white/40">
-                    Project Preview
-                  </span>
-                </div>
+              {/* Actual Project Screenshot */}
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#202321]">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} analytics dashboard`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                />
               </div>
 
               {/* Project Information */}
@@ -154,7 +111,6 @@ export default function FeaturedProjects() {
               </div>
             </article>
           ))}
-
         </div>
 
         {/* Future Projects */}
