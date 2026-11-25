@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 
@@ -42,7 +42,10 @@ export default function FeaturedProjects() {
             <article key={project.slug} className="group min-w-0">
 
               {/* Actual Project Screenshot */}
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#202321]">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="relative block aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#202321]"
+              >
                 <Image
                   src={project.image}
                   alt={`${project.title} analytics dashboard`}
@@ -50,7 +53,7 @@ export default function FeaturedProjects() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-              </div>
+              </Link>
 
               {/* Project Information */}
               <div className="mt-6">
@@ -60,9 +63,13 @@ export default function FeaturedProjects() {
                       {String(index + 1).padStart(2, "0")} / {project.category}
                     </p>
 
-                    <h3 className="mt-2 text-2xl font-semibold tracking-tight">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="mt-2 inline-block text-2xl font-semibold tracking-tight transition-colors hover:text-muted"
+                    >
                       {project.title}
-                    </h3>
+                      <span aria-hidden="true"> ↗</span>
+                    </Link>
                   </div>
 
                   <span className="rounded-full border border-border px-3 py-1.5 text-xs text-muted">
