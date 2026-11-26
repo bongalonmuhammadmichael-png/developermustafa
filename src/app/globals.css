@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+
 :root {
+  color-scheme: light;
+
   --background: #f5f4f0;
   --foreground: #171717;
   --muted: #777777;
@@ -8,6 +11,19 @@
   --accent: #a8b99a;
   --surface: #ffffff;
 }
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #171918;
+  --foreground: #f1f1ed;
+  --muted: #a1a5a0;
+  --border: #343936;
+  --accent: #a8b99a;
+  --surface: #202522;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -23,6 +39,7 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-color: var(--muted) var(--background);
 }
 
 html {
@@ -35,6 +52,9 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   margin: 0;
   min-height: 100vh;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 ::selection {
@@ -50,3 +70,5 @@ a {
 button {
   font: inherit;
 }
+
+

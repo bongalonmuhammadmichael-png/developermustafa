@@ -6,10 +6,11 @@ import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main id="top" className="flex min-h-screen flex-col">
       <Navbar />
 
       <Hero />
@@ -25,6 +26,8 @@ export default function Home() {
       <Skills />
 
       <Contact />
+
+      <Footer />
 
       {/* Future homepage sections */}
     
