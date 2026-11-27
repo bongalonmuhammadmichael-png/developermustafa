@@ -55,9 +55,11 @@ export default function Navbar() {
         {/* Desktop Contact Button */}
         <Link
           href="#contact"
-          className="mt-5 inline-flex items-center justify-center rounded-full bg-foreground px-6 py-4 text-sm font-medium text-white"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={closeMenu}
+          className="button-primary mt-5 inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-medium"
         >
-          Let's talk <span aria-hidden="true">↗</span>
+          Let's talk <span className="ml-2" aria-hidden="true">↗</span>
         </Link>
 
         {/* Mobile Menu Button */}

@@ -71,4 +71,16 @@ button {
   font: inherit;
 }
 
+/* Primary buttons */
+.button-primary {
+  background-color: var(--foreground);
+  color: var(--background);
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    opacity 200ms ease;
+}
 
+.button-primary:hover {
+  opacity: 0.85;
+}

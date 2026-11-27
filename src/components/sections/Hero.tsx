@@ -34,8 +34,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="#work"
-            style={{ color: "#ffffff" }}
-            className="rounded-full bg-foreground px-7 py-4 text-sm font-medium transition-transform duration-200 hover:-translate-y-1"
+            className="button-primary inline-flex items-center rounded-full px-7 py-4 text-sm font-medium transition-transform duration-200 hover:-translate-y-1"
           >
             Explore my work <span aria-hidden="true">↗</span>
           </Link>

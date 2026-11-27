@@ -39,8 +39,7 @@ export default function Contact() {
             
             <a
               href={`mailto:${email}`}
-              style={{ color: "#ffffff" }}
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-foreground px-7 py-4 text-sm font-medium transition-transform hover:-translate-y-1"
+              className="button-primary mt-9 inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-transform hover:-translate-y-1"
             >
               Send me an email
               <span aria-hidden="true">↗</span>
