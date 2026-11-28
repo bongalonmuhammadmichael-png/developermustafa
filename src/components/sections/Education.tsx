@@ -31,8 +31,9 @@ const certifications = [
   },
   {
     title: "One Million Prompters Initiative",
-    organization: "Prompt engineering for AI systems",
+    organization: "Dubai Future Foundation · Prompt engineering for AI systems",
     date: "June 8, 2026",
+    certificateUrl: "/certificates/01-one-million-prompters.pdf",
   },
   {
     title: "Introduction to Cybersecurity",
