@@ -45,7 +45,15 @@ export default function Hero() {
           >
             More about me
           </Link>
+
+          <Link
+            href="/resume"
+            className="rounded-full border border-border px-7 py-4 text-sm font-medium transition-colors duration-200 hover:bg-surface"
+          >
+            View my CV <span aria-hidden="true">↗</span>
+          </Link>
         </div>
+
       </div>
 
       {/* Introduction Footer */}
