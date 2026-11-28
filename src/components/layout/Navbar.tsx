@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm text-muted transition-colors duration-200 hover:text-foreground"
+              className="text-sm text-muted transition-colors duration-200 hover:text-accent"
             >
               {item.label}
             </Link>

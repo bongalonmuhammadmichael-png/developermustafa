@@ -17,7 +17,7 @@ export default function FeaturedProjects() {
         {/* Section Heading */}
         <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-accent">
               Selected Work / 2026
             </p>
 
@@ -41,10 +41,10 @@ export default function FeaturedProjects() {
           {featuredProjects.map((project, index) => (
             <article key={project.slug} className="group min-w-0">
 
-              {/* Actual Project Screenshot */}
+              {/* Project Screenshot */}
               <Link
                 href={`/projects/${project.slug}`}
-                className="relative block aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#202321]"
+                className="relative block aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-background transition-colors duration-300 hover:border-accent"
               >
                 <Image
                   src={project.image}
@@ -59,20 +59,20 @@ export default function FeaturedProjects() {
               <div className="mt-6">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-widest text-muted">
+                    <p className="text-xs font-medium uppercase tracking-widest text-accent">
                       {String(index + 1).padStart(2, "0")} / {project.category}
                     </p>
 
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="mt-2 inline-block text-2xl font-semibold tracking-tight transition-colors hover:text-muted"
+                      className="mt-2 inline-block text-2xl font-semibold tracking-tight transition-colors duration-200 hover:text-accent"
                     >
                       {project.title}
                       <span aria-hidden="true"> ↗</span>
                     </Link>
                   </div>
 
-                  <span className="rounded-full border border-border px-3 py-1.5 text-xs text-muted">
+                  <span className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted">
                     {project.status}
                   </span>
                 </div>
@@ -86,7 +86,7 @@ export default function FeaturedProjects() {
                   {project.technologies.map((technology) => (
                     <span
                       key={technology}
-                      className="rounded-full bg-background px-3 py-1.5 text-xs text-muted"
+                      className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted transition-colors duration-200 hover:border-accent hover:text-foreground"
                     >
                       {technology}
                     </span>
@@ -99,7 +99,7 @@ export default function FeaturedProjects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium transition-colors hover:text-muted"
+                    className="text-sm font-medium transition-colors duration-200 hover:text-accent"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
@@ -109,7 +109,7 @@ export default function FeaturedProjects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium transition-colors hover:text-muted"
+                      className="text-sm font-medium transition-colors duration-200 hover:text-accent"
                     >
                       Live Preview <span aria-hidden="true">↗</span>
                     </a>
