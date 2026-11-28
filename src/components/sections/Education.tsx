@@ -1,49 +1,106 @@
+
+type Certification = {
+  title: string;
+  organization: string;
+  date: string;
+  certificateUrl: string | null;
+};
+
 const education = [
   {
     qualification: "Bachelor of Multimedia Arts",
     institution: "CIIT College of Arts and Technology",
-    period: "2016 — 2020",
+    period: "2016 - 2020",
     type: "Degree",
   },
   {
     qualification: "Communication Excellence Academic",
     institution: "American Institute for English Proficiency (AIEP)",
-    period: "November 2025 — February 2026",
+    period: "November 2025 - February 2026",
     type: "Academic Program",
   },
 ];
 
-const certifications = [
+const certifications: Certification[] = [
   {
     title: "Google UX Design",
-    organization: "Coursera",
+    organization: "Google / Coursera - 7-course Professional Certificate",
     date: "October 27, 2025",
+    certificateUrl:
+      "/certificates/08-google-ux-design-professional-certificate.pdf",
+  },
+  {
+    title: "Design a User Experience for Social Good & Prepare for Jobs",
+    organization: "Google / Coursera",
+    date: "October 27, 2025",
+    certificateUrl:
+      "/certificates/09-google-ux-design-social-good-course.pdf",
   },
   {
     title: "The Complete 2023 Web Development Bootcamp",
-    organization: "Instructor: Dr. Angela Yu · 66 hours",
+    organization: "Instructor: Dr. Angela Yu - 66 hours - Udemy",
     date: "June 18, 2023",
+    certificateUrl:
+      "/certificates/04-complete-web-development-bootcamp.pdf",
   },
   {
-    title: "Fundamentals of Digital Marketing",
-    organization: "Google Digital Garage · 40 hours",
-    date: "May 14, 2023",
+    title: "One Week Python",
+    organization: "Instructor: Colt Steele - 14.5 hours - Udemy",
+    date: "April 25, 2023",
+    certificateUrl: "/certificates/03-one-week-python.pdf",
   },
   {
-    title: "One Million Prompters Initiative",
-    organization: "Dubai Future Foundation · Prompt engineering for AI systems",
-    date: "June 8, 2026",
-    certificateUrl: "/certificates/01-one-million-prompters.pdf",
+    title: "Introduction to SQL",
+    organization: "SoloLearn",
+    date: "September 9, 2023",
+    certificateUrl: "/certificates/10-introduction-to-sql.pdf",
   },
   {
     title: "Introduction to Cybersecurity",
     organization: "Cisco Networking Academy",
     date: "November 1, 2026",
+    certificateUrl:
+      "/certificates/11-cisco-introduction-to-cybersecurity.pdf",
   },
   {
-    title: "English for Science, Technology, Engineering and Mathematics (eSTEM)",
-    organization: "eTESDA",
+    title: "Cybersecurity",
+    organization: "Asian Development Bank Institute (ADBI)",
+    date: "October 28, 2026",
+    certificateUrl: "/certificates/02-adbi-cybersecurity.pdf",
+  },
+  {
+    title: "One Million Prompters Initiative",
+    organization:
+      "Dubai Future Foundation - Prompt engineering for AI systems",
+    date: "June 8, 2026",
+    certificateUrl: "/certificates/01-one-million-prompters.pdf",
+  },
+  {
+    title:
+      "English for Science, Technology, Engineering and Mathematics (eSTEM)",
+    organization: "TESDA",
     date: "September 16, 2023",
+    certificateUrl: "/certificates/05-tesda-estem.pdf",
+  },
+  {
+    title: "English for Business and Entrepreneurship",
+    organization: "TESDA",
+    date: "October 4, 2023",
+    certificateUrl:
+      "/certificates/06-tesda-english-business-entrepreneurship.pdf",
+  },
+  {
+    title: "SMART Technopreneurship 101",
+    organization: "TESDA",
+    date: "September 19, 2023",
+    certificateUrl:
+      "/certificates/07-tesda-smart-technopreneurship-101.pdf",
+  },
+  {
+    title: "Fundamentals of Digital Marketing",
+    organization: "Google Digital Garage - 40 hours",
+    date: "May 14, 2023",
+    certificateUrl: null,
   },
 ];
 
@@ -152,6 +209,22 @@ export default function Education() {
                   <p className="mt-2 text-sm text-muted">
                     {item.organization}
                   </p>
+
+                  {item.certificateUrl ? (
+                    <a
+                      href={item.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent transition-opacity hover:opacity-70"
+                    >
+                      View Certificate
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    <p className="mt-4 text-xs text-muted">
+                      Certificate not attached
+                    </p>
+                  )}
                 </div>
 
                 <p className="text-sm text-muted sm:text-right">
